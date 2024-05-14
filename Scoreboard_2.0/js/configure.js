@@ -87,9 +87,18 @@ nextStepBtn.addEventListener("click", evt => {
     }
 });
 
+/**
+ * Add EventHandler bei Klick auf "Revert"
+ * - Wenn kein stepData geladen → Redirect auf die score.html
+ * - Wenn stepData geladen → Redirect auf Auswahlbildschirm Konfiguration
+ */
 resetBtn.addEventListener("click",evt => {
-    stepData = undefined;
-    loadConfigChooser();
+    if(stepData === undefined){
+        window.location.href = "score.html";
+    }else{
+        stepData = undefined;
+        loadConfigChooser();
+    }
 });
 
 loadBaseConfigData();
