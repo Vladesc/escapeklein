@@ -1,0 +1,186 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.video-container{
+  height: 0;
+  overflow: hidden;
+  grid-column: 4/11;
+  grid-row: 3/7;
+}
+.video-container_da{
+  position: fixed;
+  top:0;
+  left:0;
+  height: 100vh;
+}
+video{
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+   width: 100vw;
+  height: 100vh;
+  height: 100vh;
+  background-image: url(../img/glowing-molecular-structure-futuristic-galaxy-backdrop-generated-by-ai.jpg);/*--Hintergrundbild einbinden--*/
+  background-repeat: no-repeat;
+  background-color: rgba(34, 34, 34, 0.73);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: center;
+ align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.countdown-container{
+
+  display: flex;
+  justify-content: center;
+  flex: 1 1 100%;
+  grid-column: 4/10;
+  grid-row: 4/7;
+}
+#countdown{
+  color: #ff0000;
+  text-shadow: 0 0 7.5px #00fff4, 0 0 15px #00fff4;
+  font-size: 25vmin;
+  margin: 0;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.44);
+  grid-row: 11/-1;
+  grid-column: 5/9;
+  flex-wrap: wrap;
+  height: 80px;
+  align-items: flex-end;
+  border-radius: 12px 12px 0 0;
+  padding-bottom: 5px
+}
+.buttons .weg{
+  display: flex;
+  justify-content: space-around;
+  flex: 1 0 80%;
+   height: 75%;
+}
+.buttons .button{
+  width: 45px;
+  height: 45px;
+ / background: #00edff;
+  padding: 3px;
+  border-radius: 100%;
+  box-shadow: 0 0 13px -3px black;
+  font-size: 2.3vmin;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.buttons .start{
+  background-image: url(../img/icons/start.png);
+  background-size: cover;
+  background-position: center;
+}
+.buttons .stop{
+  background-image: url(../img/icons/stop.png);
+  background-size: cover;
+  background-position: center;
+}
+.buttons #reset-button{
+  background: url(../img/icons/refresh.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.buttons #Fortschritt{
+  background: url(../img/icons/check.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#trigger{
+  flex: 0 0 100%;
+  height: 10px;
+  border-radius: unset;
+}
+
+/*.background-image {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  z-index: -1;*/
+/*}*/
+
+
+/** Fortschrittsanzeige */
+
+
+.card{
+  grid-column: 2/4;
+  grid-row: 5/7;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/glowing-molecular-structure-futuristic-galaxy-backdrop-generated-by-ai.jpg);;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: center;
+}
+
+.rating {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*background: #00fff4;*/
+}
+
+.block {
+  position: absolute;
+  width: 2px;
+  height: 35px;
+  left: 50%;
+  transform-origin: 50% 150px;
+  opacity: 0;
+  animation: animate 10ms linear forwards;
+  border-radius: 12px;
+  color: #6b6b6b;
+}
+@keyframes animate {
+  to{
+    opacity: 1;
+  }
+}
+
+.erledigt{
+  background: #00fff4 !important;
+  box-shadow: 0 0 15px #00fff4, 0 0 30px #00fff4;
+}
+
+.card h2{
+  position: absolute;
+  top: 48%;
+  left: 52%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.card h2 span{
+  font-size: 2.5em;
+  font-weight:  700;
+}
+
+.card h2 sup{
+  font-size: 1.5em;
+  font-weight: 500;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT-Sicherheit Scoreboard</title>
+  <link rel="stylesheet" href="css/styl.css">
+  <link rel="icon" type="image/png" href="./img/CyberSecurity.png" sizes="96x96">
+  <script src="js/test.js" defer></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="rating">
+            <h2><span class="counter" data-target="0">0</span><sup>%</sup></h2>
+        </div>
+    </div>
+
+    <div class="video-container">
+      <video id="video" controls>
+        <source src="img/Vi2.mp4" type="video/mp4"><!-- Video einbinden -->
+      </video>
+    </div>
+    <div class="countdown-container">
+      <h1 id="countdown">60:00</h1> <!-- Zeit Anzeige bei Start   -->
+    </div>
+    <div class="buttons">
+      <div class="button" id="trigger"></div>
+        <div class="weg">
+              <div class="start button" id="start-button"></div>
+              <div  class="button" id="reset-button"></div>
+              <div class="button" id="Fortschritt"></div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
