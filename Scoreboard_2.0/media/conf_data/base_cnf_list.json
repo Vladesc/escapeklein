@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Rätselkette 1",
+    "cnfJsonPath": "raetsel_kette_1.json"
+  },
+  {
+    "name": "Rätselkette 2",
+    "cnfJsonPath": "raetsel_kette_2.json"
+  }
+]

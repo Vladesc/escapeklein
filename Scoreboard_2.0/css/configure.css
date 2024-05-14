@@ -1,0 +1,80 @@
+#step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-column: 4/10;
+}
+
+#innerTitle,
+#innerImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#innerTitle {
+    height: 5vh;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#innerImg {
+    height: 50vh;
+}
+
+#innerImg img {
+    display: inline;
+    height: 100%;
+}
+
+#innerHtml {
+    height: 20vh;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 10px;
+    overflow: auto;
+}
+
+#innerHtml #spiel_starten {
+    text-decoration: none;
+    color: #fff;
+    background-color: color(srgb 0 0.6251 0.973);
+    height: 2em;
+    width: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin:10px
+}
+#innerHtml #spiel_starten:hover {
+    color: #000;
+    background-color: color(srgb 0.0063 0.9353 0.5496);
+}
+
+#cnfChooser {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    height: 20vh;
+    margin-top: 25vh;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+#cnfChooser select {
+    height: 2em;
+    width: 12em;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+.button {
+    cursor: pointer;
+}

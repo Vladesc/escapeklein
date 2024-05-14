@@ -22,21 +22,16 @@ resetButton.addEventListener('click', () => {
         clearInterval(interval);
         isCountdownRunning = false;
         countdown.textContent = '60:00';
-
-
         // zurücksetzen der progressbar
         let counter = document.querySelector(".counter")
         let strips = document.querySelectorAll('.block')
-
         startStopButton.classList.remove('stop')
         startStopButton.classList.add('start')
+        strips.forEach(block => {
 
-        strips.forEach(block =>{
-
-            if(block.classList.contains('erledigt'))
+            if (block.classList.contains('erledigt'))
                 block.remove("erledigt")
         })
-
         counter.innerText = 0
         counter.dataset.target = "0";
         zeichnen()
@@ -50,13 +45,9 @@ function startCountdown() {
     interval = setInterval(() => {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-
         countdown.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
         timeLeft--;
-
         if (timeLeft < 0) {
-
             clearInterval(interval);
             countdown.textContent = '00:00';
             isCountdownRunning = false;
@@ -78,44 +69,43 @@ function toggleCountdown() {
         isCountdownRunning = false;
         startStopButton.classList.remove('stop')
         startStopButton.classList.add('start')
-
     }
 }
-
 
 
 /*************************************** Progress ****************************************************/
 
-function zeichnen(){
+function zeichnen() {
     let rating = document.querySelector(".rating")
-    let block  = document.getElementsByClassName("block")
-    let  test   = document.querySelector('.counter')
+    let block = document.getElementsByClassName("block")
+    let test = document.querySelector('.counter')
     let leuchte = Math.round(+test.getAttribute('data-target'))
 
 
-    for (let i =0; i < 100; i++){
-        rating.innerHTML +='<div class="block"></div>'
-        block[i].style.transform = "rotate("+3.6 * i+"deg)"
-        block[i].style.animationDelay = `${i/90}s`
+    for (let i = 0; i < 100; i++) {
+        rating.innerHTML += '<div class="block"></div>'
+        block[i].style.transform = "rotate(" + 3.6 * i + "deg)"
+        block[i].style.animationDelay = `${i / 90}s`
         block[i].id = i
 
-        if(leuchte > i)
+        if (leuchte > i)
             block[i].classList.add('erledigt')
-       else
-           block[i].style.background = "#6B6B6BFF"
+        else
+            block[i].style.background = "#6B6B6BFF"
 
     }
 }
-function NumberCounter () {
+
+function NumberCounter() {
     let counter = document.querySelector(".counter")
     let value = +counter.innerText
     let target = +counter.getAttribute('data-target')
-    if(value < target){
-        if(+counter.innerText<100)
+    if (value < target) {
+        if (+counter.innerText < 100)
             counter.innerText = Math.ceil(value + 1)
-        setTimeout(()=> {
+        setTimeout(() => {
             NumberCounter()
-        },60)
+        }, 60)
     }
 }
 
@@ -123,10 +113,10 @@ zeichnen()
 NumberCounter()
 
 
-document.getElementById('Fortschritt').addEventListener('click', ()=> {
+document.getElementById('Fortschritt').addEventListener('click', () => {
     let count = document.querySelector(".counter")
     let counter = +document.querySelector(".counter").getAttribute("data-target")
-    if(counter<100 && isCountdownRunning){
+    if (counter < 100 && isCountdownRunning) {
         counter = counter + 10 // Anzahl der klicks für den Fortschritt
         count.dataset.target = counter
         zeichnen()
@@ -134,7 +124,7 @@ document.getElementById('Fortschritt').addEventListener('click', ()=> {
         audio1.play() //
     }
 
-    if(counter>99){
+    if (counter > 99) {
         clearInterval(interval);
         isCountdownRunning = false;
 
