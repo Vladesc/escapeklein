@@ -1,11 +1,5 @@
 const CNF_DATA_DIR = "media/conf_data/";
 const CNF_BASE_FILE_NAME = "base_cnf_list.json";
-
-/*
-1. Alle JSON Files (Namen) einlesen
-2. Nach Auswahl das entsprechende JSON File einlesen
-3. StepByStep durchloopen und inhalten laden+anzeigen
- */
 let nextStepBtn = document.body.querySelector("#Fortschritt");
 let resetBtn = document.body.querySelector("#reset-button");
 let htmlIDContent = document.body.querySelector("#step-content");
@@ -73,6 +67,12 @@ function loadStep(title, imgPath, htmlPath) {
         });
 }
 
+/**
+ * Add EventHandler bei Klick auf "Haken"
+ * - Wenn kein stepData geladen → Laden der gewählten Konfiguration
+ * - Wenn stepData geladen und am Ende der Steps → Konfiguration abgeschlossen screen zeigen
+ * - Wenn stepData geladen und nicht am Ende der Steps → Nächsten Step laden
+ */
 nextStepBtn.addEventListener("click", evt => {
     if(stepData === undefined){
         let e = htmlIDContent.querySelector("#selectedCnfFile");
